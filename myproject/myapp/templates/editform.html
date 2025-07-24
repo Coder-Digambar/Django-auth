@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>this is Edit Form Page</h1>
+<form method="post" action="/update/{{table.id}}">
+
+    {% csrf_token %}
+    <input type="text" name="ename" value="{{table.name}}">
+
+    {% if table.gender|lower == 'male' %}
+        <input type="radio" name="gender" value="male" checked>Male
+        <input type="radio" name="gender" value="female">Female
+    {% elif table.gender|lower == 'female' %}
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female" checked>Female
+    {% else %}
+        <input type="radio" name="gender" value="male" >Male
+        <input type="radio" name="gender" value="female">Female
+    {% endif %}
+
+    <button type="submit">Update</button>
+    <a href="{% url 'home' %}">go to home page
+    </a>
+</form>
+
+</body>
+</html>

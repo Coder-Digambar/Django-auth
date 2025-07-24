@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'bkshow' %}">Show Book Details</a>
+<div align="center">
+<form method="POST" action="insert" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Book Name -</td>
+            <td>
+                <input type="text" name="bname">
+            </td>
+        </tr>
+        <tr>
+            <td>Book Author -</td>
+            <td>
+                <input type="text" name="bauthor">
+            </td>
+        </tr>
+        <tr>
+            <td>Book Docs -</td>
+            <td>
+                <input type="file" name="bdoc">
+            </td>
+        </tr>
+        <tr>
+            <td>Book Cover -</td>
+            <td>
+                <input type="file" name="bcover">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+</html>

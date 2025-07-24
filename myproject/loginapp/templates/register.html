@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body align="center" bgcolor="skyblue">
+<h1>Register Page </h1>
+<br>
+<form action="userregister" method="POST">
+    {% csrf_token %}
+<table align="center">
+    <tr>
+        <td>First Name -</td>
+        <td>
+            <input type="text" placeholder="Enter Name here" name="fname" >
+        </td>
+    </tr>
+    <tr>
+        <td>Last Name -</td>
+        <td>
+            <input type="text" placeholder="Enter Name here" name="lname" >
+        </td>
+    </tr>
+    <tr>
+        <td>Username -</td>
+        <td>
+            <input type="text" placeholder="Enter Username here" name="uname" >
+        </td>
+    </tr>
+    <tr>
+        <td>Mail -</td>
+        <td>
+            <input type="email" placeholder="Enter Mail here" name="gmail" >
+        </td>
+    </tr>
+    <tr>
+        <td>Password -</td>
+        <td>
+            <input type="password" placeholder="Enter Password here" name="pass" >
+        </td>
+    </tr>
+    <tr>
+        <td>Confirm Password -</td>
+        <td>
+            <input type="password" placeholder="Enter Password here" name="fpass" >
+        </td>
+    </tr>
+    <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Register</button>
+            </td>
+        </tr>
+</table>
+</form>
+
+<button><a href="{% url 'indexpg' %}">Home</a></button>
+<button><a href="{% url 'loginpg' %}">Login</a></button>
+
+{% for m in messages %}
+    <h3 style="color:red;">{{m}}</h3>
+{% endfor %}
+
+</body>
+</html>

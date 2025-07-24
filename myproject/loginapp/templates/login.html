@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head >
+<body align="center" bgcolor="skyblue">
+<h1>Login Page </h1>
+<form action="{% url 'ulogin' %}" method="POST">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>Username -</td>
+            <td>
+                <input type="text" placeholder="Enter Username here" name="uname" >
+            </td>
+        </tr>
+        <tr>
+            <td>Password -</td>
+            <td>
+                <input type="password" placeholder="Enter Password here" name="pass" >
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1"><button type="submit">Login</button></td>
+        </tr>
+    </table>
+</form>
+
+<button><a href="{% url 'registerpg' %}">Register</a></button>
+<button><a href="{% url 'indexpg' %}">Home</a></button>
+
+{% for m in messages %}
+    <h3 style="color:red;">{{m}}</h3>
+{% endfor %}
+
+</body>
+</html>

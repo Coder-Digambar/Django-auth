@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>this is form page</h1>
+<form align="center" method="post" action="{% url 'insert' %}">
+
+    {% csrf_token %}
+    <input placeholder="enter name" type="text" name="sname">
+    <br>
+    <input type="radio" value="Male" name="gender">Male
+    <input type="radio" value="Female" name="gender">Female
+    <br>
+    <button type="submit">login</button>
+    <br>
+    <a href="{% url 'home' %}">go to home page
+    </a>
+</form>
+</body>
+</html>

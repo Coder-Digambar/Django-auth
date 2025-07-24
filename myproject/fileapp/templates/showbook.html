@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Doc</th>
+            <th>Cover</th>
+        </tr>
+        {% for i in book %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.author}}</td>
+            <td>
+                <a href="{{i.docs.url}}">View</a>
+            </td>
+            <td>
+                <img src="{{ i.cover.url }}" height="50px" width="50px">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+</body>
+</html>
